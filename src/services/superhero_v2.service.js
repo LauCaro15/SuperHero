@@ -14,14 +14,9 @@ class SuperheroService {
     return SuperheroModel.findById({ _id: superheroId });
   }
   async editSuperhero(superheroId, superhero, realname, superpower) {
-    return SuperheroModel.findById({ _id: superheroId }).then(
-      (superheroFind) => {
-        if (!superheroFind) throw Error('No se encontro el superheroe');
-        return SuperheroModel.updateOne(
-          { superheroId },
-          { superhero, realname, superpower }
-        );
-      }
+    return SuperheroModel.updateOne(
+      { _id: superheroId  },
+      { superhero, realname, superpower }
     );
   }
   async removeSuperhero(superheroId) {
