@@ -8,6 +8,7 @@ router_person.post('/person', (req, res) => {
     .save()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
+    
 });
 /* GET: hhtp://localhost:5000/api/v1/people/*/
 router_person.get('/', (req, res) => {
